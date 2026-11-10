@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ctext y=%27.9em%27 font-size=%2790%27%3E%F0%9F%8C%BF%3C/text%3E%3C/svg%3E">
+<title>Nodeleafs – Websites for the trades</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500&display=swap">
+<style>
+:root{--bg:#EEF2EA;--surface:#FFFFFF;--ink:#14231A;--muted:#506055;--leaf:#2E7D4F;--wire:#E39A1E;--line:#CBD5C6;
+--display:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;--body:"DM Sans","Helvetica Neue",Arial,sans-serif;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1A14;--surface:#172A1F;--ink:#E8F0E6;--muted:#9DB0A2;--leaf:#5FBF85;--wire:#F0B040;--line:#2B4034}}
+:root[data-theme="dark"]{--bg:#0F1A14;--surface:#172A1F;--ink:#E8F0E6;--muted:#9DB0A2;--leaf:#5FBF85;--wire:#F0B040;--line:#2B4034}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 var(--body)}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--wire);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{display:flex;justify-content:space-between;align-items:center;padding:24px 0}
+.logo{font:800 22px var(--display);text-decoration:none;letter-spacing:-.01em}
+nav a{margin-left:24px;text-decoration:none;color:var(--muted);font-weight:500}
+nav a:hover{color:var(--ink)}
+h1,h2,h3{font-family:var(--display);line-height:1.05;margin:0;letter-spacing:-.02em}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px 0 88px}
+h1{font-size:clamp(40px,6vw,76px);font-weight:800}
+.hero p{max-width:46ch;color:var(--muted);font-size:19px;margin:24px 0 32px}
+.btn{display:inline-block;background:var(--ink);color:var(--bg);padding:14px 26px;border-radius:999px;font-weight:500;text-decoration:none}
+.btn:hover{background:var(--leaf);color:#fff}
+.tree{width:100%;height:auto;overflow:visible}
+.tree .edge{stroke:var(--line);stroke-width:2.5;fill:none;stroke-dasharray:200;stroke-dashoffset:200;animation:draw 1.4s .2s ease forwards}
+.tree .edge.b{animation-delay:.5s}
+.tree .node{fill:var(--ink)}
+.tree .leaf{fill:var(--leaf)}
+.tree text{font:500 14px var(--body);fill:var(--ink)}
+.tree .tag{fill:var(--muted);font-size:12px}
+.tree a:hover .leaf{fill:var(--wire)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@media (prefers-reduced-motion:reduce){.tree .edge{animation:none;stroke-dashoffset:0}html{scroll-behavior:auto}}
+section{padding:72px 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(30px,4vw,46px);margin-bottom:12px}
+.lede{color:var(--muted);max-width:54ch;margin:0 0 48px}
+.project{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;margin-bottom:72px}
+.project:nth-of-type(even){grid-template-columns:1fr 1.2fr}
+.project:nth-of-type(even) .shot{order:2}
+.shot{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.bar{display:flex;gap:6px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.mock{aspect-ratio:16/10;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.mock .m-nav{display:flex;justify-content:space-between;font:800 13px var(--display)}
+.mock .m-nav span:last-child{opacity:.7;font-weight:500}
+.mock .m-h{font:800 clamp(20px,3vw,32px)/1.05 var(--display);max-width:14ch}
+.mock .m-btn{align-self:flex-start;font:500 12px var(--body);padding:8px 16px;border-radius:6px}
+.jj{background:#EDEEE6;color:#1C2342;border-bottom:4px solid #24398A}.jj .m-btn{background:#CC3A2A;color:#fff}.jj .m-nav span:last-child{color:#4B5274}.links{margin:18px 0 0}.links a{font-weight:500}
+.ah{background:#F3ECE1;color:#1F1A17;border-bottom:4px solid #B4532A}.ah .m-btn{background:#B4532A;color:#fff}
+.meta{color:var(--muted);font-size:15px;margin:0 0 10px}
+.project h3{font-size:32px;margin-bottom:14px}
+.project p{margin:0 0 18px;max-width:46ch}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:0;list-style:none}
+.chips li{border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-size:14px;color:var(--muted)}
+.do{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.do h3{font-size:22px;margin-bottom:8px}
+.do p{margin:0;color:var(--muted)}
+.contact{text-align:center}
+.contact h2{font-size:clamp(34px,5vw,60px)!important}
+.contact .lede{margin:16px auto 32px}
+footer{padding:32px 0;color:var(--muted);font-size:14px;border-top:1px solid var(--line)}
+@media (max-width:760px){.hero,.project,.project:nth-of-type(even),.do{grid-template-columns:1fr}.project:nth-of-type(even) .shot{order:0}nav a{margin-left:16px}.hero{padding-top:24px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header><a class="logo" href="#top">Nodeleafs</a><nav><a href="#work">Work</a><a href="#services">Services</a><a href="#contact">Contact</a></nav></header>
+
+<main id="top">
+<div class="hero">
+<div>
+<h1>Websites that get the trades found and called.</h1>
+<p>Nodeleafs designs and builds fast, clear websites for contractors and local service companies. Every site is built so the next customer can find you, trust you, and pick up the phone.</p>
+<a class="btn" href="#work">See our work</a>
+</div>
+<svg class="tree" viewBox="0 0 400 340" role="img" aria-label="Nodeleafs branching to two client sites: J&amp;J Electrical Construction and Arrowhead Electric">
+<path class="edge" d="M200 50 C200 120 90 130 90 220"/>
+<path class="edge b" d="M200 50 C200 120 310 130 310 220"/>
+<circle class="node" cx="200" cy="50" r="16"/>
+<text x="200" y="22" text-anchor="middle">Nodeleafs</text>
+<a href="#jj"><circle class="leaf" cx="90" cy="220" r="26"/><text x="90" y="274" text-anchor="middle">J&amp;J Electrical</text><text class="tag" x="90" y="292" text-anchor="middle">Construction</text></a>
+<a href="#arrowhead"><circle class="leaf" cx="310" cy="220" r="26"/><text x="310" y="274" text-anchor="middle">Arrowhead</text><text class="tag" x="310" y="292" text-anchor="middle">Electric</text></a>
+</svg>
+</div>
+</div>
+
+<section id="work"><div class="wrap">
+<h2>Selected work</h2>
+<p class="lede">Two electrical companies, two sites built around how their customers actually search and hire.</p>
+
+<article class="project" id="jj">
+<div class="shot"><div class="bar"><i></i><i></i><i></i></div>
+<div class="mock jj"><div class="m-nav"><span>J&amp;J Electrical</span><span>Services · Job log · Reviews · Contact</span></div><div class="m-h">From the meter to the last outlet.</div><span class="m-btn">Call for a quote</span></div></div>
+<div>
+<p class="meta">Electrician in Nassau, NY</p>
+<h3>J&amp;J Electrical Construction</h3>
+<p>A site with a blueprint-inspired look that lays out J&amp;J’s services, shows real work in a job log, features customer reviews, and puts a call and email contact one tap away.</p>
+<ul class="chips"><li>Web design</li><li>Development</li><li>Mobile-first</li></ul>
+<p class="links"><a href="https://claude.ai/artifact/CJ9YXk13UbhamDsS5pnquE" target="_blank" rel="noopener">Visit the J&amp;J site</a></p>
+</div>
+</article>
+
+<article class="project" id="arrowhead">
+<div class="shot"><div class="bar"><i></i><i></i><i></i></div>
+<div class="mock ah"><div class="m-nav"><span>Arrowhead Electric</span><span>Process · Work · About · Call</span></div><div class="m-h">We wire the houses going up around Tulsa.</div><span class="m-btn">Call (918) 292-8686</span></div></div>
+<div>
+<p class="meta">Electrical contractor in Tulsa &amp; Broken Arrow, OK</p>
+<h3>Arrowhead Electric</h3>
+<p>A warm, story-driven site for a Tulsa contractor that has wired homes since 2005. A scroll-through of how a new house gets wired, plus project numbers and a one-tap call to the office, speak to builders first and homeowners too.</p>
+<ul class="chips"><li>Web design</li><li>Development</li><li>Scroll storytelling</li><li>Local search</li></ul>
+</div>
+</article>
+</div></section>
+
+<section id="services"><div class="wrap">
+<h2>What we do</h2>
+<p class="lede">Small team, direct communication, sites that load fast and read well on a phone.</p>
+<div class="do">
+<div><h3>Design</h3><p>Clean layouts that match your brand and put your services and contact details first.</p></div>
+<div><h3>Build</h3><p>Fast, responsive websites that work on every screen and are easy to keep up to date.</p></div>
+<div><h3>Launch</h3><p>Domain, hosting, and basic search setup handled, so you go live without the headaches.</p></div>
+</div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+<h2>Need a website for your business?</h2>
+<p class="lede">Tell us about your company and we’ll tell you what it takes.</p>
+<a class="btn" href="mailto:hello@nodeleafs.com">Email Nodeleafs</a>
+</div></section>
+</main>
+
+<footer><div class="wrap">© 2026 Nodeleafs. All rights reserved.</div></footer>
+</div>
+</body>
+</html>
